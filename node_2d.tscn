@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bg0483ytnkxdq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 562.0
+offset_bottom = 298.0
+text = "Brian was here"
