@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://7sgdmfe73lvu"]
+
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_mnefy"]
+
+[node name="EscapeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_mnefy")
+
+[node name="Button" type="Button" parent="Node"]
+offset_left = 500.0
+offset_top = 226.0
+offset_right = 596.0
+offset_bottom = 257.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Node/Button" to="Node" method="send_to_main_menu"]

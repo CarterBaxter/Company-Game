@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://b0e4q66dhnw24"]
+[gd_scene format=3 uid="uid://bkpkf4q3q444a"]
 
-[node name="Credits" type="Node2D"]
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -216.0
+offset_right = 26.0
+offset_bottom = -193.0
+text = "Credits"

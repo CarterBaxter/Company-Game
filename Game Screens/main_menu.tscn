@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp46asy6v5n8j"]
+
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_8fadq"]
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_ln2yn"]
+[ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="3_8fadq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_8fadq")
+
+[node name="Buttons" type="Node" parent="."]
+script = ExtResource("1_ln2yn")
+
+[node name="OnlineButton" type="Button" parent="Buttons"]
+offset_left = -30.0
+offset_top = -58.0
+offset_right = 30.0
+offset_bottom = -27.0
+theme = ExtResource("1_8fadq")
+text = "Online"
+
+[node name="LocalButton" type="Button" parent="Buttons"]
+offset_left = -27.0
+offset_top = -101.0
+offset_right = 22.0
+offset_bottom = -70.0
+theme = ExtResource("1_8fadq")
+text = "Local"
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+offset_left = -36.0
+offset_top = -12.0
+offset_right = 34.0
+offset_bottom = 19.0
+theme = ExtResource("1_8fadq")
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="Buttons"]
+offset_left = -31.0
+offset_top = 41.0
+offset_right = 32.0
+offset_bottom = 72.0
+theme = ExtResource("1_8fadq")
+text = "Credits"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Buttons"]
+stream = ExtResource("3_8fadq")
+volume_db = -5.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Buttons"]
+stream = ExtResource("3_8fadq")
+pitch_scale = 2.65
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -235.0
+offset_right = 46.0
+offset_bottom = -212.0
+text = "Main Menu"
+
+[connection signal="focus_entered" from="Buttons/OnlineButton" to="Buttons" method="on_click"]
+[connection signal="mouse_entered" from="Buttons/OnlineButton" to="Buttons" method="on_hover"]
+[connection signal="pressed" from="Buttons/OnlineButton" to="Buttons" method="send_to_online"]
+[connection signal="focus_entered" from="Buttons/LocalButton" to="Buttons" method="on_click"]
+[connection signal="mouse_entered" from="Buttons/LocalButton" to="Buttons" method="on_hover"]
+[connection signal="pressed" from="Buttons/LocalButton" to="Buttons" method="send_to_local"]
+[connection signal="focus_entered" from="Buttons/SettingsButton" to="Buttons" method="on_click"]
+[connection signal="mouse_entered" from="Buttons/SettingsButton" to="Buttons" method="on_hover"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="Buttons" method="send_to_settings"]
+[connection signal="focus_entered" from="Buttons/CreditsButton" to="Buttons" method="on_click"]
+[connection signal="mouse_entered" from="Buttons/CreditsButton" to="Buttons" method="on_hover"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="Buttons" method="send_to_credits"]

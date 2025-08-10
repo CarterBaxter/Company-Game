@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://csgoe6jfpd0wi"]
+[gd_scene format=3 uid="uid://b6whbuxpjsjs3"]
 
-[node name="Settings" type="Node2D"]
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -252.0
+offset_right = 19.0
+offset_bottom = -229.0
+text = "Settings"
