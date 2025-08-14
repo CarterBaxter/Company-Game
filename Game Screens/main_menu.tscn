@@ -47,10 +47,12 @@ text = "Credits"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Buttons"]
 stream = ExtResource("3_8fadq")
 volume_db = -5.0
+bus = &"Menu"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Buttons"]
 stream = ExtResource("3_8fadq")
 pitch_scale = 2.65
+bus = &"Menu"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
