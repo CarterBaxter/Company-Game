@@ -9,47 +9,41 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_8fadq")
 
-[node name="Buttons" type="Node" parent="."]
-script = ExtResource("1_ln2yn")
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_right = 66.0
+offset_bottom = 272.0
+grow_horizontal = 2
 
-[node name="OnlineButton" type="Button" parent="Buttons"]
-offset_left = -30.0
-offset_top = -58.0
-offset_right = 30.0
-offset_bottom = -27.0
-theme = ExtResource("1_8fadq")
+[node name="OnlineButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
 text = "Online"
 
-[node name="LocalButton" type="Button" parent="Buttons"]
-offset_left = -27.0
-offset_top = -101.0
-offset_right = 22.0
-offset_bottom = -70.0
-theme = ExtResource("1_8fadq")
+[node name="LocalButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
 text = "Local"
 
-[node name="SettingsButton" type="Button" parent="Buttons"]
-offset_left = -36.0
-offset_top = -12.0
-offset_right = 34.0
-offset_bottom = 19.0
-theme = ExtResource("1_8fadq")
+[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="Buttons"]
-offset_left = -31.0
-offset_top = 41.0
-offset_right = 32.0
-offset_bottom = 72.0
-theme = ExtResource("1_8fadq")
+[node name="CreditsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
 text = "Credits"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Buttons"]
+[node name="SFX" type="Node" parent="."]
+script = ExtResource("1_ln2yn")
+
+[node name="select" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_8fadq")
 volume_db = -5.0
 bus = &"Menu"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Buttons"]
+[node name="hover" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_8fadq")
 pitch_scale = 2.65
 bus = &"Menu"
@@ -64,15 +58,15 @@ offset_right = 46.0
 offset_bottom = -212.0
 text = "Main Menu"
 
-[connection signal="focus_entered" from="Buttons/OnlineButton" to="Buttons" method="on_click"]
-[connection signal="mouse_entered" from="Buttons/OnlineButton" to="Buttons" method="on_hover"]
-[connection signal="pressed" from="Buttons/OnlineButton" to="Buttons" method="send_to_online"]
-[connection signal="focus_entered" from="Buttons/LocalButton" to="Buttons" method="on_click"]
-[connection signal="mouse_entered" from="Buttons/LocalButton" to="Buttons" method="on_hover"]
-[connection signal="pressed" from="Buttons/LocalButton" to="Buttons" method="send_to_local"]
-[connection signal="focus_entered" from="Buttons/SettingsButton" to="Buttons" method="on_click"]
-[connection signal="mouse_entered" from="Buttons/SettingsButton" to="Buttons" method="on_hover"]
-[connection signal="pressed" from="Buttons/SettingsButton" to="Buttons" method="send_to_settings"]
-[connection signal="focus_entered" from="Buttons/CreditsButton" to="Buttons" method="on_click"]
-[connection signal="mouse_entered" from="Buttons/CreditsButton" to="Buttons" method="on_hover"]
-[connection signal="pressed" from="Buttons/CreditsButton" to="Buttons" method="send_to_credits"]
+[connection signal="focus_entered" from="ButtonsContainer/OnlineButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="ButtonsContainer/OnlineButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="ButtonsContainer/OnlineButton" to="SFX" method="send_to_online"]
+[connection signal="focus_entered" from="ButtonsContainer/LocalButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="ButtonsContainer/LocalButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="ButtonsContainer/LocalButton" to="SFX" method="send_to_local"]
+[connection signal="focus_entered" from="ButtonsContainer/SettingsButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="ButtonsContainer/SettingsButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="ButtonsContainer/SettingsButton" to="SFX" method="send_to_settings"]
+[connection signal="focus_entered" from="ButtonsContainer/CreditsButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="ButtonsContainer/CreditsButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="ButtonsContainer/CreditsButton" to="SFX" method="send_to_credits"]
