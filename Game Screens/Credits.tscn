@@ -1,11 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkpkf4q3q444a"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_fmgni"]
+[ext_resource type="Theme" uid="uid://d2f8yhxuj3rna" path="res://Themes/credits.tres" id="2_1aqbj"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_din7a"]
 [ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="3_1aqbj"]
-
-[sub_resource type="Theme" id="Theme_fmgni"]
-Label/font_sizes/font_size = 42
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -38,7 +36,7 @@ text = "Credits"
 
 [node name="Roles" type="VBoxContainer" parent="PanelContainer/MarginContainer/Seperator"]
 layout_mode = 2
-theme = SubResource("Theme_fmgni")
+theme = ExtResource("2_1aqbj")
 
 [node name="RoleLine" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -138,7 +136,6 @@ text = "Brandon Weaver"
 [node name="MainMenu" type="Button" parent="PanelContainer/MarginContainer/Seperator"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 3
 text = "Main Menu"
 
 [node name="SFX" type="Node" parent="."]
