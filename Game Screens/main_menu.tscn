@@ -1,72 +1,102 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp46asy6v5n8j"]
+[gd_scene load_steps=5 format=3 uid="uid://cp46asy6v5n8j"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_8fadq"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_ln2yn"]
 [ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="3_8fadq"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fadq"]
+texture_margin_top = 150.0
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_8fadq")
 
-[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -66.0
-offset_right = 66.0
-offset_bottom = 272.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="OnlineButton" type="Button" parent="ButtonsContainer"]
+[node name="Margins" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
-text = "Online"
 
-[node name="LocalButton" type="Button" parent="ButtonsContainer"]
+[node name="Seperator" type="VBoxContainer" parent="PanelContainer/Margins"]
 layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/Margins/Seperator"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fadq")
+text = "Main Menu"
+
+[node name="ButtonMargins" type="MarginContainer" parent="PanelContainer/Margins/Seperator"]
+layout_mode = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 250
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="PanelContainer/Margins/Seperator/ButtonMargins"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LocalButton" type="Button" parent="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Local"
 
-[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
+[node name="OnlineButton" type="Button" parent="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Online"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="ButtonsContainer"]
+[node name="CreditsButton" type="Button" parent="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Credits"
+
+[node name="ExitButton" type="Button" parent="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit"
 
 [node name="SFX" type="Node" parent="."]
 script = ExtResource("1_ln2yn")
 
 [node name="select" type="AudioStreamPlayer" parent="SFX"]
+unique_name_in_owner = true
 stream = ExtResource("3_8fadq")
 volume_db = -5.0
 bus = &"Menu"
 
 [node name="hover" type="AudioStreamPlayer" parent="SFX"]
+unique_name_in_owner = true
 stream = ExtResource("3_8fadq")
 pitch_scale = 2.65
 bus = &"Menu"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -42.0
-offset_top = -235.0
-offset_right = 46.0
-offset_bottom = -212.0
-text = "Main Menu"
-
-[connection signal="focus_entered" from="ButtonsContainer/OnlineButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="ButtonsContainer/OnlineButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="ButtonsContainer/OnlineButton" to="SFX" method="send_to_online"]
-[connection signal="focus_entered" from="ButtonsContainer/LocalButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="ButtonsContainer/LocalButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="ButtonsContainer/LocalButton" to="SFX" method="send_to_local"]
-[connection signal="focus_entered" from="ButtonsContainer/SettingsButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="ButtonsContainer/SettingsButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="ButtonsContainer/SettingsButton" to="SFX" method="send_to_settings"]
-[connection signal="focus_entered" from="ButtonsContainer/CreditsButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="ButtonsContainer/CreditsButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="ButtonsContainer/CreditsButton" to="SFX" method="send_to_credits"]
+[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="send_to_local"]
+[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="send_to_online"]
+[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="send_to_settings"]
+[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="send_to_credits"]
+[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="exit_game"]
