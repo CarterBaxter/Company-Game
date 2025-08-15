@@ -78,13 +78,11 @@ script = ExtResource("1_ln2yn")
 unique_name_in_owner = true
 stream = ExtResource("3_8fadq")
 volume_db = -5.0
-bus = &"Menu"
 
 [node name="hover" type="AudioStreamPlayer" parent="SFX"]
 unique_name_in_owner = true
 stream = ExtResource("3_8fadq")
 pitch_scale = 2.65
-bus = &"Menu"
 
 [connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_hover"]

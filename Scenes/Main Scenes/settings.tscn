@@ -75,13 +75,11 @@ script = ExtResource("3_l135s")
 unique_name_in_owner = true
 stream = ExtResource("4_ce70g")
 volume_db = -5.0
-bus = &"Menu"
 
 [node name="hover" type="AudioStreamPlayer" parent="SFX"]
 unique_name_in_owner = true
 stream = ExtResource("4_ce70g")
 pitch_scale = 2.65
-bus = &"Menu"
 
 [connection signal="focus_entered" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="SFX" method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="SFX" method="on_hover"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bitwjnc8meecp"]
+
+[ext_resource type="Script" uid="uid://s3kcpnfaewhf" path="res://audio_manager.gd" id="1_bsn0u"]
+[ext_resource type="Script" uid="uid://bxr7irbsnhkl7" path="res://Scripts/sound_effects.gd" id="2_yl3ev"]
+[ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="3_odop5"]
+
+[sub_resource type="Resource" id="Resource_yl3ev"]
+script = ExtResource("2_yl3ev")
+type = 0
+sound_effect = ExtResource("3_odop5")
+bus = 3
+sfx_limit = 2
+volume = 0.5
+pitch_scale = 1.0
+pitch_randomness = 0.12
+metadata/_custom_type_script = "uid://bxr7irbsnhkl7"
+
+[sub_resource type="Resource" id="Resource_xgiqr"]
+script = ExtResource("2_yl3ev")
+type = 1
+sound_effect = ExtResource("3_odop5")
+bus = 3
+sfx_limit = 2
+volume = 0.5
+pitch_scale = 0.5
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://bxr7irbsnhkl7"
+
+[sub_resource type="Resource" id="Resource_ntjji"]
+script = ExtResource("2_yl3ev")
+type = 2
+sound_effect = ExtResource("3_odop5")
+bus = 3
+sfx_limit = 5
+volume = 0.5
+pitch_scale = 0.1
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://bxr7irbsnhkl7"
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_bsn0u")
+sound_effects = Array[ExtResource("2_yl3ev")]([SubResource("Resource_yl3ev"), SubResource("Resource_xgiqr"), SubResource("Resource_ntjji")])
+
+[node name="SoundEffects" type="ResourcePreloader" parent="."]
+script = ExtResource("2_yl3ev")
