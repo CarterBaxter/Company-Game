@@ -51,7 +51,7 @@ text = "Lead Dev"
 [node name="Name" type="Label" parent="PanelContainer/MarginContainer/Seperator/Roles/RoleLine"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.888016, 0.000302646, 0.809442, 1)
-text = "Carter Baxter"
+text = "Carter"
 
 [node name="RoleLine2" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -67,7 +67,7 @@ text = "Project Manager"
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.334099, 0.863583, 0.85973, 1)
-text = "Brian Weaver"
+text = "Brian"
 
 [node name="RoleLine3" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -83,7 +83,7 @@ text = "Art Team"
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.888016, 0.000302646, 0.809442, 1)
-text = "Jay ..."
+text = "Jay"
 
 [node name="RoleLine4" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -99,7 +99,7 @@ text = "Art Team"
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.334099, 0.863583, 0.85973, 1)
-text = "Harrison Baxter"
+text = "Harrison"
 
 [node name="RoleLine5" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -115,7 +115,7 @@ text = "Music & SFX"
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.888016, 0.000302646, 0.809442, 1)
-text = "Sammy ..."
+text = "Sammy"
 
 [node name="RoleLine6" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2
@@ -131,7 +131,7 @@ text = "Creative Director"
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.334099, 0.863583, 0.85973, 1)
-text = "Brandon Weaver"
+text = "Brandon"
 
 [node name="MainMenu" type="Button" parent="PanelContainer/MarginContainer/Seperator"]
 layout_mode = 2
