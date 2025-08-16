@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://vsrg8q2pgpd8"]
+[gd_scene load_steps=3 format=3 uid="uid://vsrg8q2pgpd8"]
+
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_bsbwm"]
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_6s4b2"]
 
 [node name="Local" type="Control"]
 layout_mode = 3
@@ -7,12 +10,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_bsbwm")
+script = ExtResource("2_6s4b2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="Camera2D"]
-offset_left = -30.0
-offset_top = -226.0
-offset_right = 16.0
-offset_bottom = -202.0
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 text = "Local"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="focus_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="send_to_main_menu"]

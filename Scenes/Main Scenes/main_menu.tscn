@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp46asy6v5n8j"]
+[gd_scene load_steps=4 format=3 uid="uid://cp46asy6v5n8j"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_8fadq"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_ln2yn"]
-[ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="3_8fadq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fadq"]
 texture_margin_top = 150.0
@@ -15,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8fadq")
+script = ExtResource("1_ln2yn")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -71,31 +71,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Exit"
 
-[node name="SFX" type="Node" parent="."]
-script = ExtResource("1_ln2yn")
-
-[node name="select" type="AudioStreamPlayer" parent="SFX"]
-unique_name_in_owner = true
-stream = ExtResource("3_8fadq")
-volume_db = -5.0
-
-[node name="hover" type="AudioStreamPlayer" parent="SFX"]
-unique_name_in_owner = true
-stream = ExtResource("3_8fadq")
-pitch_scale = 2.65
-
-[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="SFX" method="send_to_local"]
-[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="SFX" method="send_to_online"]
-[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="SFX" method="send_to_settings"]
-[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="SFX" method="send_to_credits"]
-[connection signal="focus_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="SFX" method="exit_game"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="." method="send_to_local"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/OnlineButton" to="." method="send_to_online"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/SettingsButton" to="." method="send_to_settings"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="send_to_credits"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="on_click"]
+[connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="exit_game"]
