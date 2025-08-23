@@ -83,6 +83,6 @@ text = "Exit"
 [connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="on_hover"]
 [connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/CreditsButton" to="." method="send_to_credits"]
-[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="on_click"]
+[connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="on_back"]
 [connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="on_hover"]
 [connection signal="pressed" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/ExitButton" to="." method="exit_game"]

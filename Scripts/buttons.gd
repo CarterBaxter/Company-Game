@@ -21,7 +21,10 @@ func send_to_main_menu() -> void:
 
 #sound scripts#
 func on_hover():
-	AudioManager.create_audio(Enums.SOUND_EFFECTS.BUTTON_HOVER)
+	AudioManager.create_audio(Enums.SOUND_EFFECTS.HOVER)
 	
 func on_click():
-	AudioManager.create_audio(Enums.SOUND_EFFECTS.BUTTON_SELECT)
+	AudioManager.create_audio(Enums.SOUND_EFFECTS.OPTION_SELECT)
+	
+func on_back():
+	AudioManager.create_audio(Enums.SOUND_EFFECTS.OPTION_DESELECT)

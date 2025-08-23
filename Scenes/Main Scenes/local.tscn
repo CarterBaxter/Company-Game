@@ -37,6 +37,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Back"
 
-[connection signal="focus_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_click"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_back"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_hover"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="send_to_main_menu"]

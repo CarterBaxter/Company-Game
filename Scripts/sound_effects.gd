@@ -7,9 +7,9 @@ extends Resource
 @export var sound_effect: AudioStreamMP3
 @export var bus : Enums.BUSSES
 @export var sfx_limit: int = 5
-@export_range(0, 1, 0.01) var volume: float  
+@export_range(0, 1, 0.01) var volume: float  = 0.5
 @export_range(0, 4, 0.01) var pitch_scale: float = 1.0
-@export_range(0, 1, 0.01) var pitch_randomness: float
+@export_range(0, 1, 0.01) var pitch_randomness: float = .25
 
 var current_count: int = 0 
 
