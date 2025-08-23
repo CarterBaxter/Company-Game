@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6whbuxpjsjs3"]
+[gd_scene load_steps=5 format=3 uid="uid://b6whbuxpjsjs3"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_4iprc"]
 [ext_resource type="Theme" uid="uid://du3vnqt4ogp24" path="res://Themes/settings.tres" id="2_ktgpy"]
 [ext_resource type="PackedScene" uid="uid://h2tkmw66uyjs" path="res://Scenes/small components/h_slider.tscn" id="3_grfor"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="3_l135s"]
-[ext_resource type="AudioStream" uid="uid://cm6lqfyldbo4t" path="res://Assets/Sounds/retro-select-236670.mp3" id="4_ce70g"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -14,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4iprc")
+script = ExtResource("3_l135s")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -117,19 +117,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Exit"
 
-[node name="SFX" type="Node" parent="."]
-script = ExtResource("3_l135s")
-
-[node name="select" type="AudioStreamPlayer" parent="SFX"]
-unique_name_in_owner = true
-stream = ExtResource("4_ce70g")
-volume_db = -5.0
-
-[node name="hover" type="AudioStreamPlayer" parent="SFX"]
-unique_name_in_owner = true
-stream = ExtResource("4_ce70g")
-pitch_scale = 2.65
-
-[connection signal="focus_entered" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="SFX" method="on_click"]
-[connection signal="mouse_entered" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="SFX" method="on_hover"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="SFX" method="send_to_main_menu"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="." method="on_back"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="." method="on_hover"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Splitter/ExitButton" to="." method="send_to_main_menu"]
