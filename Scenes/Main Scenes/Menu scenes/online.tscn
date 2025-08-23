@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://7sgdmfe73lvu"]
+[gd_scene load_steps=3 format=3 uid="uid://c3q0spnkad2my"]
 
-[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_104na"]
-[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_mnefy"]
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_bflh2"]
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_dgdg5"]
 
-[node name="EscapeMenu" type="Control"]
+[node name="Online" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_104na")
-script = ExtResource("1_mnefy")
+theme = ExtResource("1_bflh2")
+script = ExtResource("1_dgdg5")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -29,14 +29,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Escape Menu"
+text = "Online"
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Main Menu"
+text = "Back"
 
-[connection signal="button_down" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_back"]
+[connection signal="focus_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_hover"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="send_to_main_menu"]
