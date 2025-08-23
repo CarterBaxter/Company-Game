@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqtugh3j5knij"
+path="res://.godot/imported/Menu Close.mp3-4e13a73099b570fa1e0ef3221c918e07.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Menu Close.mp3"
+dest_files=["res://.godot/imported/Menu Close.mp3-4e13a73099b570fa1e0ef3221c918e07.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
