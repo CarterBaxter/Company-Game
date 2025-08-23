@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cp46asy6v5n8j"]
 
-[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_8fadq"]
-[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_ln2yn"]
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_3fejt"]
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_rb8gi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fadq"]
 texture_margin_top = 150.0
@@ -13,8 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8fadq")
-script = ExtResource("1_ln2yn")
+theme = ExtResource("1_3fejt")
+script = ExtResource("2_rb8gi")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

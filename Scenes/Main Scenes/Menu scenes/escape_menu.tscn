@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7sgdmfe73lvu"]
 
-[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_104na"]
-[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="1_mnefy"]
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_q8v0v"]
+[ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_ttkyh"]
 
 [node name="EscapeMenu" type="Control"]
 layout_mode = 3
@@ -10,8 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_104na")
-script = ExtResource("1_mnefy")
+theme = ExtResource("1_q8v0v")
+script = ExtResource("2_ttkyh")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

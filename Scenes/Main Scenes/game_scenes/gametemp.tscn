@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh5m0dy0pqrk2"]
+
+[ext_resource type="PackedScene" uid="uid://cb6d22vivbgi0" path="res://Assets/characters/Player.tscn" id="1_jyvrc"]
+
+[node name="Gametemp" type="Node2D"]
+position = Vector2(576, 324)
+
+[node name="Player" parent="." instance=ExtResource("1_jyvrc")]
+position = Vector2(-410, -68)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-574, -322)
+anchor_mode = 0

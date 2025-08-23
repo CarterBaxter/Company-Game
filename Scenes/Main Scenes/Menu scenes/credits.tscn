@@ -36,7 +36,7 @@ text = "Credits"
 
 [node name="Roles" type="VBoxContainer" parent="PanelContainer/MarginContainer/Seperator"]
 layout_mode = 2
-theme = ExtResource("2_1aqbj")
+theme = ExtResource("2_wjkq6")
 
 [node name="RoleLine" type="HBoxContainer" parent="PanelContainer/MarginContainer/Seperator/Roles"]
 layout_mode = 2

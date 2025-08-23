@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cffed2ogag2db"]
+
+[ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_mubfl"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_mubfl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Character Select"
+horizontal_alignment = 1
