@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://vsrg8q2pgpd8"]
+[gd_scene load_steps=5 format=3 uid="uid://vsrg8q2pgpd8"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_6yp34"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_40svy"]
+[ext_resource type="Script" uid="uid://b76oohj88p22o" path="res://Scripts/character_select.gd" id="3_40svy"]
+[ext_resource type="PackedScene" uid="uid://da56rijbwj328" path="res://Scenes/Main Scenes/Menu scenes/selection_popup.tscn" id="3_h3q62"]
 
 [node name="Local" type="Control"]
 layout_mode = 3
@@ -31,6 +33,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Local"
 
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Popup"
+script = ExtResource("3_40svy")
+
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -43,6 +51,14 @@ size_flags_horizontal = 4
 text = "testing
 "
 
+[node name="SelectionPopup" parent="." instance=ExtResource("3_h3q62")]
+visible = false
+layout_mode = 1
+offset_left = 2.0
+offset_top = -66.0
+offset_bottom = 93.0
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button2" to="." method="popup"]
 [connection signal="focus_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="on_hover"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="send_to_main_menu"]

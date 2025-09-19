@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp46asy6v5n8j"]
+[gd_scene load_steps=5 format=3 uid="uid://cp46asy6v5n8j"]
 
 [ext_resource type="Theme" uid="uid://b6ekpsvf6ykjw" path="res://Themes/base_theme.tres" id="1_3fejt"]
 [ext_resource type="Script" uid="uid://dxq0nx2cxivf2" path="res://Scripts/buttons.gd" id="2_rb8gi"]
+[ext_resource type="AudioStream" uid="uid://b8dteku2c0uus" path="res://Assets/Sounds/Background/Main Music.mp3" id="3_rb8gi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fadq"]
 texture_margin_top = 150.0
@@ -70,6 +71,11 @@ text = "Credits"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rb8gi")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="button_down" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="." method="on_click"]
 [connection signal="mouse_entered" from="PanelContainer/Margins/Seperator/ButtonMargins/ButtonsContainer/LocalButton" to="." method="on_hover"]
